@@ -1,0 +1,104 @@
+body {
+  background-color: #7eabee;
+}
+
+.td-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.td-tasks {
+  margin-bottom: 10px;
+  max-height: 500px;
+  min-height: 500px;
+  overflow-y: auto; /* Добавить вертикальный скролл при необходимости */
+  overflow-x: hidden; /* Убрать горизонтальный скролл */
+  padding: 0 10px 0 10px;
+
+  &__wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  &__title {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__input {
+    margin-inline-end: 20px;
+    margin-bottom: 10px;
+    &-wrapper {
+      display: flex;
+    }
+  }
+
+  &__empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.td-task {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all linear 0.3s;
+
+    &:hover {
+      box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    }
+
+    &.compleate {
+      .td-task__title {
+        opacity: 0.5;
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  &__checkbox {
+    margin-inline-end: 10px;
+
+    .ant-checkbox-inner {
+      width: 25px;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &::after {
+        width: 6px;
+        height: 11px;
+        top: 50%;
+        inset-inline-start: 33%;
+      }
+    }
+  }
+}
+
+.td-filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__filter {
+    margin: 0 20px 0;
+  }
+}
